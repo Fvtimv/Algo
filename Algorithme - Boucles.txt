@@ -1,0 +1,207 @@
+Algorithme
+
+Exercice 1.
+Ecrire un algorithme qui demande à l'utilisateur un nombre compris entre 1 et 3 
+jusqu'à ce que la réponse convienne.
+
+Variable nb en Entier
+Début
+    nb <- 0
+    Ecrire "Donnez nombre"
+    Tant que  nb<1 OU nb>3
+    Lire nombre
+    Si nb>1 ET nb<3                 Si nb>1 OU nb<3
+    Ecrire "Bravo!"                 Ecrire "Erreur, Donnez un nombre"
+    Fin Si
+    Fin Tant que
+Fin    
+
+Exercice 2.
+Ecrire un algorithme qui demande un nombre compris entre 10 et 20, jusqu'à ce que 
+la réponse convienne. En cas de réponse supérieure à 20, on fera apparaître un 
+message : "Plus petit !", et inversement, "Plus grand !" si le nombre est inférieur à 10.
+
+Variable nb en Entier
+Début
+    nb <- 0
+    Ecrire "Donnez nombre"
+    Tant que nb≤10 OU nb≥20
+    Lire nb
+    Si nb<10 Alors
+    Ecrire "Plus grand !"
+    Sinon Si nb>20 Alors
+    Ecrire "Plus petit !"
+    Sinon 
+    Ecrire "Bien joué !"
+    Fin Si 
+    Fin Tant que
+Fin
+
+Exercice 3.
+Ecrire un algorithme qui demande un nombre de départ, et qui ensuite affiche les 
+dix nombres suivant. Par example, si l'utilisateur entre le nombre 17, le programme 
+affichera les nombres de 18 à 27.
+
+Variable n, i en Entier
+Début
+    Ecrire "Donner nombre"                      Ecrire "Donner nombre"
+    Lire nb                                     Lire nb
+    Pour (i <- 1, i <- 10) Alors                Pour (i <- 1, i <- 10, i++) Alors
+    Ecrire nb + 1                               Ecrire nb + 1
+    i++                         
+Fin
+
+Exercice 4.
+Ecrire un algorithmequi demande un nombre de départ, et qui ensuite écrit la table de 
+multiplication de ce nombre, présentée comme suit (cas où l'utilisateur entre le nombre 7)
+
+Variable nb, i en Entier
+Début
+    Ecrire "Donnez nombre"
+    Lire nb
+    Ecrire "Table de" nb
+    For (i=1; i =<10; i++)
+    Ecrire nb "x" i "=" nb*1
+Fin
+
+Exercice 5.
+ECrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers 
+jusqu'à ce nombre. Par example, si l'on entre, le programme doit calculer :
+1 + 2 + 3 + 4 + 5 = 15
+NB: on souhaite afficher uniquement le résultat, pas la décomposition du calcul.
+
+Variable  i, somme, nb en Entier
+Début
+    somme <- 0
+    Ecrire "Donnez nombre"
+    Lire nb
+    Pour (i<-1; i<-nombre; i++)
+    somme <- somme + i
+    Ecrire "Somme"
+Fin
+
+Exercice 6.
+Ecrire un algorithme qui demande un nombre de départ, et qui calcule sa factorielle.
+NB: la factorielle de 8, notéé!, vaut
+1 x 2 x 3 x 4 x 5 x 6 x 7 x 8
+
+Variable i, nb, res en Entier
+Début
+    Ecrire "Donnez nombre"
+    Lire nb
+    res <- 1
+    Pour (i<-1; i<-nb; i++)
+    res <- nb*1
+    Ecrire "La factorielle de" nb "est" res
+Fin
+
+Exercice 7.
+Ecrire un algorithme qui demande successivement 20 nombres à l'utilisateur, et qui 
+lui dise ensuite quel était le plus grand parmi ces 20 nombres:
+Entrez le nombre numéro 1:12
+Entrez le nombre numéro 2:14
+etc.
+Entrez le nombre numéro 20:6
+
+Le plus grand de ces nombre est: 14
+
+Modifiez ensuite l'algorithme pour que le programme affiche de surcroît en quelle 
+position avait été saisie ce nombre:
+C'était le nombre numéro 2
+
+Variable nb, i, nbMax en Entier
+Début
+    nbMax <- 0
+    Pour (i<-1; i<-20; i++) ou aussi (i<-1 à 20)
+    Ecrire "Donnez nombre"
+    Lire nb
+    Si (nb>nbMax) Alors
+    nbMax <- nb
+    Fin Si
+    Ecrire " Le nombre le plus grand est:" nbMax
+Fin
+
+Variable nb, i, nbMax, position en Entier
+Début
+    nbMax <- 0
+    position <- 0
+    Pour (i<-1; i<-20; i++)
+    Ecrire "Donnez nombre"
+    Lire nb
+    Si (nb>nbMax) Alors
+    nbMax <- nb
+    position <- i
+    Fin Si
+Fin
+
+Exercice 8.
+Réécrire l'algorithme précédent, mais cette fois-ci on ne connaît pas d'avance combien 
+l'utilisateur souhaite saisir de nombres. La saisie de nombres s'arrête lorsque 
+l'utilisateur entre un zéro.
+
+Variable nb, nbMax en Entier
+Début
+    nbMax <- 0
+    nb <- 1
+    Tant que nb<>0 Alors
+    Ecrire "Donnez nombre"
+    Lire nb
+    Si (nb>nbMax) Alors
+    nbMax <- nb
+    Fin Tant que
+    Ecrire "Le nbMax est nbMax"
+    Fin Si
+Fin
+
+Variable nb, nbMax, i, position en Entier
+Début
+    nbMax <- 0
+    nb <- 1
+    i <- 0
+    Tant que nb<>0 Alors
+    i <- i+1
+    Ecrire "Donnez nombre"
+    Lire nb
+    Si (nb>nbMax) Alors
+    nbMax <- nb
+    position <- i
+    Fin Tant que
+    Ecrire "Le nbMax est nbMax"
+    Fin Si
+Fin
+
+Exercice 9.
+Lire la suite des prix (en euros entiers et terminée par zéro) des achats d'un client.
+Calculer la somme qu'il doit, lire la somme qu'il paye, et simuler la remise de la monnaie 
+en affichant les textes "10 Euros", "5 Euros" et "1 Euro" autant de fois qu'il y a de 
+coupures de chaque sorte à rendre.
+
+Variable prixArt, prixTot, montantDonne, rendu, nb10, nb5 en Entier
+Début
+    prixArt <- 1
+    prixTot <- 0
+    nb10 <- 0
+    nb5 <- 0
+    Tant que prixArt <> 0 Alors
+    Ecrire "Scannez Prix Article"
+    Lire prixArt
+    prixTot<-prixTot + prixArt              (prixTot+=prixArt)
+    Fin Tant que
+    Ecrire "Vous avez la somme de" prixTot
+    Ecrire "Reglement:"
+    Lire montantDonne
+    rendu <- montantDonne - prixTot
+    Tant que (rendu≥10)
+    rendu <- rendu-10                       rendu-=10                               
+    nb10 <- nb10+1                          nb10++
+    Fin tant que
+    Si rendu≥5 Alors
+    rendu <- rendu-5                        rendu-=5                                
+    nb5 <- nb5+1                            nb5++
+    Fin Si
+    Ecrire "Je cous est rendu" nb10 "billet de 10" "Je vous est rendu" nb5 "billet de 5" et rendu piece de 1"
+Fin
+
+
+    ≥ ≤
+

@@ -1,0 +1,96 @@
+Algorithme - Calcul Facture
+
+Problématique
+Vous êtes informaticien pour la société Tout’à’Vendre et vous devez réaliser une automatisation de
+calcul de facture afin d’optimiser le traitement de ces dernières.
+Après une analyse des besoins, vous êtes parvenu à la problématique suivante :
+« Afficher le montant brut,la remise, les frais de livraisons, le montant net HT, le montant de la TVA, le
+montant TTC et le montant Net à payer connaissant la quantité, le prix unitaire, le taux de remise, les
+frais de livraison suivant le code de livraison et le taux de la TVA »
+
+Données connues
+Pour réaliser ce programme vous avez à votre disposition les éléments suivants:
+Taux de remise : 10% si accordée
+Montant TVA : 19.6%
+Frais de livraison
+o 10€ si code 1
+o 20€ si code 2
+o 30€ si code 3
+o Offert si code 4
+
+Travail à réaliser
+Concevoir un programme permettant de calculer et d’afficher ces montants.
+
+Variables
+
+variable bool_remise en boolean
+variable montant_remise en simple
+variable montant_HT en simple
+variable quantite en entier
+variable montant_livraison en simple
+variable montant_total_HT en simple <- 0
+variable montant_TTC en simple
+variable montant_TVA en simple
+variable montant_net en simple
+variable montant_net_HT en simple
+variable code_livraison en string
+
+Constantes
+
+constante taux_remise en numerique <- 0.10
+constante taux_TVA en numerique <- 0.196
+constante frais_code en entier 1 à 4
+    frais_code(1) <- 10
+    frais_code(2) <- 20
+    frais_code(3) <- 30
+    frais_code(4) <- 0
+
+Début
+    Ecrire "Scanner l'article" 
+    Lire montant_HT
+    Tant que montant_HT <> 0
+
+
+        Ecrire "Donnez la quantité"
+        Lire quantite
+
+        montant_total_HT <- montant_total_HT + (montant_HT * quantite)
+
+
+        Ecrire "Scannez l'article"
+        Lire montant_HT
+
+    Fin Tant que
+    
+    Ecrire "Y a t'il une remise"
+    Lire bool_remise
+
+    Si bool_remise = true Alors
+
+        montant_remise = montant_total_HT * taux_remise
+
+    Sinon
+
+        montant_remise <- 0
+
+    Fin Si
+    
+    Ecrire "Donnez le code de livraison"
+    Lire code_livraison
+
+        montant_livraison <- frais_code(code_livraison)
+        montant_net_HT <- montant_total_HT - montant_remise
+        montant_TVA <- montant_total_HT * taux_TVA
+        montant_TTC <- montant_net_HT + montant_TVA
+        montant_net <- montant_TTC + montant_livraison
+
+    
+    Ecrire "Le montant brut est de : " montant_total_HT
+    Ecrire "La remise est de : " montant_remise
+    Ecrire "Les frais de livraison sont de : " montant_livraison
+    Ecrire "Le montat total de la TVA est de : " montant_TVA
+    Ecrire "Le montant total TTC est de : " montant_TTC
+    Ecrire "Le montant net a payer (avec livraison) est de : " montant_net
+Fin
+
+

@@ -1,0 +1,110 @@
+Algorithme – Les variables
+
+Exercice 1.
+Quelles seront les valeurs des variables A et B après exécution des instructions suivantes ?
+
+Variables A, B en Entier
+Début
+	A <- 1                          A = 3
+	B <- A + 3                      B = 4
+	A <- 3
+Fin
+
+Exercice 2.
+Quelles seront les valeurs des variables A, B et C après exécution des instructions suivantes ?
+
+Variables A, B, C en Entier
+Début
+    A <- 5
+    B <- 3                          A = 2
+    C <- A + B                      B = 3
+    A <- 2                          C = 1
+    C <- B -Algorithme
+Fin
+
+Exercice 3.
+Quelles seront les valeurs des variables A et B après exécution des instructions suivantes ?
+
+Variables A, B en en Entier
+Début
+    A <- 5
+    B <- A + 4                      A = 6
+    A <- A + 1                      B = 2
+    B <- A - 4
+Fin
+
+Exercice 4.
+Quelles seront les valeurs des variables A, B et C après exécution des instructions suivantes ?
+
+Variables A, B, C en Entier
+Début
+    A <- 5
+    B <- 10                         A = 13
+    C <- A + B                      B = 13
+    B <- A + B                      C = 13
+    A <- C
+Fin
+
+Exercice 5.
+Quelles seront les valeurs des variables A et B après exécution des instructions suivantes ?
+
+Variables A, B en Entier
+Début
+    A <- 5          
+    B <- 2                         A = 2
+    A <- B                         B = 2
+    B <- A
+
+Moralité : les dernières instructions permettent-elles d'échanger les deux valeurs de B et A ?
+    Non les deux dernières valeurs ne permettent pas d'échanger les valeurs B et A.
+           Si l'on inverse les deux dernières instructions, cela change-t-il quelque chose?
+    Oui car B = 5 et A = 2
+
+Exercice 6.
+Plus difficile, mais c'est un classique absolu, qu'il faut absolument maîtriser : écrire un algorithme 
+permettant d'échanger les valeurs de deux variables A et B, et ce quel que soit leur contenu préalable.
+
+Variables A, B, C* en Entier
+Début
+    A <- 2                                      *pour interchanger des variables on a besoin des
+    B <- 5                          B = 2       variables temporaires
+    C <- A                          A = 5
+    A <- B
+    B <- C 
+Fin
+
+Exercice 7.
+Une variante du précédent : on dispose de trois variables A, B et C. Ecrivez un algorithme transférant 
+à B la valeur de A, à C la valeur de B et à A la valeur de C (toujourd quels que soient les contenus 
+préalables de ces variables).
+
+Variable A, B, C, D en Entier
+Début
+    A <- 2
+    B <- 5
+    C <- 3
+    D <- B 
+    B <- A 
+    A <- C 
+    C <- D 
+Fin
+
+Exercice 8.
+Que produit l'algorithme suivant ?
+
+Variables A, B, C en Caractère
+Début
+    A <- "423"              On ne fait pas d'operation en chaine de caractère
+    B <- "12"                  ERROR
+    C <- A + B 
+Fin
+
+Exercice 9.
+Que produit l'algorithme suivant ?
+
+Variables A, B, C en Caractères
+Début
+    A <- "423"              C = 435
+    B <- "12"               *le & c'est une concatenation 
+    C <- A & B 
+Fin

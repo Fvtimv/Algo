@@ -1,0 +1,419 @@
+Algorithme - Tableaux
+
+0   1   2   3   4   5 (index avec 6 valeurs qui vont apparaitre dans le tableau)
+
+tableau prix[5] en numerique
+variable moyenne, somme, i en numerique
+
+Début
+
+    pour (i <- 0; i <- 5)
+    Ecrire "Rentrez un prix"
+    Lire prix[i]
+
+    i suivant (ou i++)
+
+        somme <- 0
+
+    pour (i <- 0; i <- 5)
+
+        somme <- prix[i] + somme
+    i suivant (ou i++) 
+        moyenne <- somme/6
+
+
+Exercice 1.
+Ecrire un algorithme qui déclare et remplisse un tableau de 7 valeurs 
+numérique en les mettant toutes à zéro.
+
+0   1   2   3   4   5   6
+2   5   7   9   10  5   8
+
+tableau tab[6] en numerique
+variable i en numerique
+
+Début
+    Pour (i <- 0; i <-6)
+        tab[i] <- 0
+    i++
+Fin
+
+
+Exercice 2.
+Ecrire un algorithme qui déclare et remplisse un tableau contenant 
+les six voyelles de l'alphabet latin.
+
+0   1   2   3   4   5
+A   E   I   O   U   Y  
+
+tableau voyelles[5] en string(car chaine de caractere)
+
+
+Début
+    voyelles[0] <- A
+    voyelles[1] <- E
+    voyelles[2] <- I
+    voyelles[3] <- O
+    voyelles[4] <- U
+    voyelles[5] <- Y
+Fin
+
+
+Exercice 3.
+Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait 
+ensuite saisir les valeurs par l'utilisateur.
+
+tableau notes[8] en entier
+variable i en entier
+
+Début
+    Pour (i <- 0; i <- 8)
+    Ecrire "Donnez une note" 
+    Lire notes[i]
+    i++
+Fin
+
+
+Exercice 4.
+Que produit l'algorithme suivant?
+Tabelau nb[5] en Entier
+variable i en Entier
+Début
+    pour (i <- 0; i <- 5)
+        nb[i] <- i * i 
+    i++
+    pour (i <- 0; i <- 5)
+        Ecrire nb[i]
+    i++
+Fin
+
+0   1   2   3   4   5
+0   1   4   9   16  25
+
+Peut-on simplifier cet algorithme avec le même résultat?
+
+Tabelau nb[5] en Entier
+variable i en Entier
+Début
+    pour (i <- 0; i <- 5)
+        nb[i] <- i * i 
+        Ecrire nb[i]
+    i++
+Fin
+
+
+Exercice 5.
+Que produit l'algorithme suivant?
+
+tableau N[6] en Entier
+variables i, k en Entier
+Début   
+    N[0] <- 1
+    pour k <- 1; k <- 6
+        N[k] <- N[k-1] + 2
+    k++
+    pour i <- 0; i <- 6
+        Ecrire N[i]
+    i++
+Fin
+
+0   1   2   3   4   5   6 
+1   3   5   7   9   11  13
+  
+Peut-on simplifier cet algorithme avec le même résultat
+
+tableau N[6] en Entier
+variables k en Entier
+Début   
+    N[0] <- 1
+    Ecrire N[0]
+    pour k <- 1; k <- 6
+        N[k] <- N(k-1) + 2
+        Ecrire N[k]
+    k++
+Fin
+
+
+Exercice 6.
+Que produit l'algorithme suivant?
+
+tableau suite[7] en Entier
+variable i en Entier
+Début
+    suite[0] <- 1
+    suite[1] <- 1
+    pour i <- 2; i <- 7
+        suite[i] <- suite(i-1) + suite(i-2)
+    i++
+    pour i <- 0; i <- 7
+        Ecrire suite[i]
+    i++
+Fin
+
+0   1   2   3   4   5   6   7
+1   1   2   3   5   8   13  21
+
+
+Exercice 7.
+Ecrivez la fin de l'algorithme 3 afin que le calcul de la moyenne 
+des notes soit effectué et affiché à l'écran.
+
+tableau notes[8] en entier
+variable i, somme en entier
+Début
+    somme <- 0
+    Pour (i <- 0; i <- 8)
+        Ecrire "Donnez une note" 
+        Lire notes[i]
+        somme <- somme + notes[i]
+    i++
+    Ecrire "La moyenne est de:" somme/9
+Fin
+
+
+Exercice 8.
+Ecrivez un algorithme permettant à l'utilisateur de saisir un nombre quelconque 
+de valeurs, qui devront être stockées dans un tableau. L'utilisateur doit donc 
+commencer par entrer le nombre de valeurs qu'il compte saisir.Il effectuera 
+ensuite cette saisie. Enfin, une fois la saisie terminée, le programme 
+affichera le nombre de valeurs négatives et le nombre de valeurs positives.
+
+tableau nombres[] en numerique
+variable valeur, i, positif, negatif en entier
+Début
+        Ecrire "Donnez un nombre"
+        Lire valeur
+        positif <- 0
+        negatif <- 0
+
+        Redim nombres[valeur-1]
+
+    Pour (i <- 0; i <- (valeur-1))
+        Ecrire "Donnez un valeur"
+        nombres[i]
+    Si nombre[i] > 0 Alors
+        positif++ ou positif <- positif+1
+    Sinon Si nombres[i] < 0 Alors
+        negatif <- negatif+1 ou negatif++
+    Fin Si
+    i++
+    Ecrire "Il y a" positif "nombres positifs et" negatif "nombre négatif et 
+    il y a" valeurs "nombre dans le tableau"
+Fin
+
+
+Exercice 9.
+Ecrivez un algorithme calculant la somme des valeurs d'un tableau (on suppose
+que le tableau a été préalablement saisi).
+
+tableau nombres[] en entier
+variable valeur, i, somme en entier
+Début
+        Ecrire "Donnez un nombre"
+        Lire valeur
+    
+        Redim nombres[valeur-1]
+
+        somme <- O
+    Pour (i <- 0; i <- (valeur-1))
+        somme <- somme + nombres[i]
+    i++
+Fin
+
+Exercice 10.
+Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de 
+même longueur préalablement saisis. Le nouveau tableau sera la somme des
+éléments des deux tableaux de départ.
+
+Tableau 1:
+4   8   7   9   1   5   4   6
+
+Tableau 2:
+7   6   5   2   1   3   7   4
+
+Tableau à constituer:
+11  14  12  11  2   8   11  10  
+
+tab1[], tab2[], tabFinal[] en entier
+variable valeur, i, somme en entier
+
+Début
+...
+redim tab1[valeur-1]
+redim tab2[valeur-1]
+redim tab3[valeur-1]
+
+    Pour i <- 0; i <- valeur-1
+        tab3[i] <- tab2[i] + tab1[i]
+    i++
+Fin
+
+
+Exercice 11.
+Toujours à partir de deux tableaux précédemment saisis, écrivez 
+un algorithme qui calcule le schtroumpf des deux tableaux. Pour 
+calculer le schtroumpf, il faut multiplier chaque élément du 
+tableau 1 par chaque élément du tableau 2, et additionner le tout.
+Par exemple si l'on a:
+
+Tableau 1:
+4   8   7   12
+
+Tableau 2:
+3   6
+
+Le Schtroumpf sera:
+3*4 + 3*8 + 3*7 + 3*12 + 6*4 + 6*8 + 6*7 + 6*12 = 279
+
+tableaux tab1[], tab2[] en numerique
+variable valeur1 en entier
+variable valeur2 en entier
+variable somme en entier
+variable i, j en entier
+
+
+Début
+    Ecrire "Donnez un nombre de valeur pour le tableau 1"
+    Lire valeur1
+
+    Ecrire "Donnez un nombre de valeur pour le tableau 2"
+    Lire valeur2
+
+    redim tab1[valeur1-1]
+    redim tab2[valeur2-1]
+
+    somme <- 0
+    Pour i <- 0; i <- valeur1-1
+        Pour j <- 0; i <- valeur2-1
+            somme <- somme + tab1[i] * tab2[j]
+        j++
+    i++
+
+
+Exercice 12.
+Ecrivez un algorithme qui permette la saisie d'un nombre quelconque 
+de valeurs, sur le principe de l'ex 8 Toutes les valeurs doivent être 
+ensuite augmentées de 1, et le nouveau tableau sera affiché à l'écran.
+
+tableau nombres[] en numerique
+variable valeur, i en entier
+Début
+        Ecrire "Donnez un nombre"
+        Lire valeur
+
+        Redim nombres[valeur-1]
+
+    Pour (i <- 0; i <- (valeur-1))
+        Ecrire "Donnez un nombre"
+        Lire nombres[i]
+    i++
+    Pour (i <- 0; i <- (valeur-1))
+        nombres[i] <- nombre[i] + 1
+        Ecrire nombre[i]
+    i++
+Fin
+
+si on veut utiliser que une boucle:
+Pour (i <- 0; i <- (valeur-1))
+        Ecrire "Donnez un nombre"
+        Lire nombres[i]
+        nombres[i] <- nombre[i] + 1
+        Ecrire nombre[i]
+    i++
+
+
+Exercice 13.
+Ecrivez un algorithme permettant, toujours sur le même principe, à 
+l'utilisateur de saisir un nombre déterminé de valeurs. Le programme,
+une fois la saisie terminée, renvoie la plus grande valeur en précisant
+quelle position elle occupe dans le tableau. On prend soin d'effectuer 
+la saisie dans un premier temps, et la recherche de la plus grande valeur
+du tableau dans un second temps.
+
+    
+tableau nombres[] en numerique
+variable valeur, i, nbMax, position en entier
+Début
+        Ecrire "Donnez un nombre"
+        Lire valeur
+
+        Redim nombres[valeur-1]
+
+    Pour (i <- 0; i <- (valeur-1))
+        Ecrire "Donnez un nombre"
+        Lire nombres[i]
+    i++
+
+    nbMax <- 0
+
+    Pour (i <- 0; i <- (valeur-1))
+        Si nombres[i] > nbMax Alors
+        nbMax <- nombre[i]
+        position <- i 
+    Fin Si
+    i++
+        Ecrire "La plus haute valeur est" nbMax "et sa position est:" position
+    
+Fin
+
+ou sinon 
+
+tableau nombres[] en numerique
+variable valeur, i, position en entier
+Début
+        Ecrire "Donnez un nombre"
+        Lire valeur
+
+        Redim nombres[valeur-1]
+
+    Pour (i <- 0; i <- (valeur-1))
+        Ecrire "Donnez un nombre"
+        Lire nombres[i]
+    i++
+
+    position <- 0
+
+    Pour (i <- 0; i <- (valeur-1))
+        Si nombres[i] > nombre[position] Alors
+        position <- i 
+    Fin Si
+    i++
+        Ecrire "La plus haute valeur est" nombre[position] "et sa position 
+        est:" position
+    
+Fin
+
+
+
+Exercice 14.
+Toujours et encore sur le même principe, écrivez un algorithme permettant,
+à l'utilisateur de saisir les notes d'une classe. Le programme, une fois 
+la saisie terminée, renvoie le nombre de ces notes supérieures à la moyennede 
+la classe.
+
+variables valeur, somme, moyenne, notesSupMoyenne en numerique
+tableau notes[] en numerique
+
+Début
+        Ecrire "Donnez un nombre"
+        Lire valeur
+
+        redim notes[valeur-1]
+
+    Pour i <- 0; i <- valeur-1
+        Ecrire "Donnez une note"
+        Lire notes[i]
+    i++
+        somme <- 0
+    Pour i <- 0; i <- valeur-1
+        somme <- somme + notes[i]
+    i++
+        moyenne <- somme / valeur
+        notesSupMoyenne <- 0
+    Pour i <- 0; i <- valeur-1
+        Si notes[i] > moyenne Alors
+        notesSupMoyenne <-notesSupMoyenne + 1 ou notesSupMoyenne++
+    i++
+        Ecrire "Il y a" notesSupMoyenne " notes moyennes supérieures à" moyenne
+
+

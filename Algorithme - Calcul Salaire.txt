@@ -1,0 +1,65 @@
+Algorithme - Calcul Salaire
+
+Problématique
+Vous êtes rattaché au service paie de votre société. Afin d’optimiser le calcul du salaire des salariés, il
+vous est demandé de programmer une automatisation de ce traitement.
+Après une analyse des besoins, vous êtes parvenu à la problématique suivante :
+« Calculer et afficher le salaire d’un commercial suivant ses primes de transport et de CA, ainsi que son
+salaire de base.»
+
+Données connues
+Pour réaliser ce programme vous avez à votre disposition les éléments suivants:
+Prime sur CA : 2% du CA si le CA est inférieur à 50 000€
+Prime sur CA : 4% du CA si le CA est supérieur à 50 000€
+Remboursement kilométrique : 0.26€
+
+Travail à réaliser
+Concevoir un programme permettant de calculer et d’afficher ce montant.
+
+Variables
+
+variable salaire en Entier
+variable prime_transport en Entier
+variable km en entier
+variable prime_CA en Entier
+variable CA en Entier
+variable salaire_base en Entier
+variable prime1 en Entier
+variable prime2 en Entier
+
+Début
+        salaire <- 0
+        prime_transport <-0
+        prime_CA <- 0
+        salaire_Base <- 0
+        CA <- 0
+        km <- 0
+        prime1 <- 0
+        prime2 <- 0
+
+    Ecrire "Donnez salaire"
+    Lire salaire_base
+
+    Si  CA < 50000€ Alors
+
+    Ecrire "CA"
+    Lire CA
+
+        prime_CA <- prime_CA * prime1/100
+
+    Ecrire "La prime CA est de : " primeCA
+
+
+    Sinon 
+
+        prime_CA <- prime_CA * prime2/100
+    Ecrire "La prime CA est de : " primeCA
+
+    Fin Si
+
+        prime_transport <- km *0.26
+        salaire-base <- prime_CA + prime_transport + salaire_base
+
+    Ecrire "Votre Salaire est de : " salaire
+
+Fin
